@@ -124,10 +124,40 @@ button:hover {
 /* Result Box */
 .result-box {
   margin-top: 1.5rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   font-size: 1.2rem;
   font-weight: 500;
   color: #fff;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.result-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Result Text Styling */
+.result-box .result-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff6f61;
+  margin-bottom: 0.5rem;
+}
+
+.result-box .result-description {
+  font-size: 1rem;
+  color: #ddd;
+  margin-top: 0.5rem;
+}
+
+/* Result Icon */
+.result-box .result-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ff6f61;
 }
