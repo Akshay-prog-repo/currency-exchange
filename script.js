@@ -1,4 +1,4 @@
-const apiKey = 'YOUR_API_KEY'; // Replace with your API key
+const apiKey = '7b5775fddea3c6c627593450'; // Replace with your API key
 const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
 document.getElementById('exchange-form').addEventListener('submit', async (e) => {
