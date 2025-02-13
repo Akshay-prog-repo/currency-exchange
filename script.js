@@ -41,17 +41,27 @@ const currencies = [
   { code: 'ZMW', name: 'Zambian Kwacha' },
 ];
 
-// Populate currency dropdowns
-const fromCurrencySelect = document.getElementById('from-currency');
-const toCurrencySelect = document.getElementById('to-currency');
+// Function to populate dropdowns
+function populateDropdowns() {
+  const fromCurrencySelect = document.getElementById('from-currency');
+  const toCurrencySelect = document.getElementById('to-currency');
 
-currencies.forEach(currency => {
-  const option = document.createElement('option');
-  option.value = currency.code;
-  option.textContent = `${currency.code} - ${currency.name}`;
-  fromCurrencySelect.appendChild(option.cloneNode(true));
-  toCurrencySelect.appendChild(option);
-});
+  // Clear existing options
+  fromCurrencySelect.innerHTML = '';
+  toCurrencySelect.innerHTML = '';
+
+  // Add currencies to dropdowns
+  currencies.forEach(currency => {
+    const option = document.createElement('option');
+    option.value = currency.code;
+    option.textContent = `${currency.code} - ${currency.name}`;
+    fromCurrencySelect.appendChild(option.cloneNode(true));
+    toCurrencySelect.appendChild(option);
+  });
+}
+
+// Populate dropdowns when the page loads
+document.addEventListener('DOMContentLoaded', populateDropdowns);
 
 // Handle form submission
 document.getElementById('exchange-form').addEventListener('submit', async (e) => {
@@ -61,7 +71,7 @@ document.getElementById('exchange-form').addEventListener('submit', async (e) =>
   const fromCurrency = document.getElementById('from-currency').value;
   const toCurrency = document.getElementById('to-currency').value;
 
-  if (!amount || isNaN(amount) {
+  if (!amount || isNaN(amount)) {
     alert('Please enter a valid amount.');
     return;
   }
