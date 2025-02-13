@@ -87,9 +87,16 @@ document.getElementById('exchange-form').addEventListener('submit', async (e) =>
 
     const rates = data.conversion_rates;
     const convertedAmount = (amount * rates[toCurrency]).toFixed(2);
-    document.getElementById('result').innerText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+
+    // Update the result section
+    const resultText = document.querySelector('.result-text');
+    const resultDescription = document.querySelector('.result-description');
+
+    resultText.innerText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+    resultDescription.innerText = `Converted from ${fromCurrency} to ${toCurrency}`;
   } catch (error) {
     console.error('Error fetching exchange rates:', error);
-    document.getElementById('result').innerText = 'Error fetching exchange rates. Please try again later.';
+    document.querySelector('.result-text').innerText = 'Error fetching exchange rates.';
+    document.querySelector('.result-description').innerText = 'Please try again later.';
   }
 });
