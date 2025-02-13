@@ -1,24 +1,41 @@
 /* General Styles */
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #1f1c2c, #3a2c4f);
   color: #fff;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background image */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1625225233840-695456021cde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5); /* Darken the background for better readability */
+  z-index: -1;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
   padding: 2.5rem;
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   max-width: 450px;
   width: 100%;
   text-align: center;
+  z-index: 1;
 }
 
 h1 {
@@ -67,6 +84,24 @@ select {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 12px;
+}
+
+/* Dropdown Options Styling */
+select option {
+  background-color: #333; /* Dark background for options */
+  color: #fff; /* White text for options */
+}
+
+/* Ensure dropdown options are visible on all browsers */
+select:focus option:checked {
+  background-color: #ff6f61; /* Highlight selected option */
+  color: #fff;
+}
+
+/* Dropdown hover effect */
+select option:hover {
+  background-color: #ff6f61; /* Highlight on hover */
+  color: #fff;
 }
 
 button {
